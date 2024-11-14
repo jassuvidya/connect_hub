@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Faculty Form</h2>
+<h2>{% if form.instance.pk %}Edit Faculty{% else %}Add Faculty{% endif %}</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+<a href="{% url 'faculty-list' %}">Cancel</a>
+{% endblock %}

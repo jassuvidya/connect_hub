@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Student List</h2>
+<legend><a href="{% url 'student-create' %}">Add Student</a></Legend>
+<ul>
+    {% for student in students %}
+        <li>
+            <a href="{% url 'student-detail' student.pk %}">{{ student }}</a>
+            <a href="{% url 'student-update' student.pk %}"><button>Edit</button></a>
+            <a href="{% url 'student-delete' student.pk %}"><button>Delete</button></a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

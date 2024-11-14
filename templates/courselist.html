@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Course List</h2>
+<a href="{% url 'course-create' %}">Add Course</a>
+<ul>
+    {% for course in courses %}
+        <li>
+            <a href="{% url 'course-detail' course.pk %}"><button>{{ course }}</button></a>
+            <a href="{% url 'course-update' course.pk %}"><button>Edit</button></a>
+            <a href="{% url 'course-delete' course.pk %}"><button>Delete</button></a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock  %}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Enrollment List</h2>
+<ul>
+    {% for enrollment in enrollments %}
+        <li>{{ enrollment.student }} enrolled in {{ enrollment.course }} on {{ enrollment.enrollment_date }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

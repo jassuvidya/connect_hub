@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body{
+            background-image: url('https://cdn.pixabay.com/photo/2015/04/15/01/28/background-723053_1280.jpg');
+        }
+    </style>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mx-auto mt-5 shadow">
+                <form method="post">
+                    {% csrf_token %}
+                    <h2><u>User Registration</u></h2>
+                    {% if errmsg %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ errmsg }}
+                    </div>
+                    {% endif %}
+                    {% if success %}
+                    <div class="alert alert-success" role="alert">
+                        {{ success }}
+                    </div>
+                    {% endif %}
+                    <div class="mb-3">
+                        <label for="input1" class="form-label">User Name:</label>
+                        <input type="text" class="form-control" id="input1" placeholder="Enter your username" name="uname">
+                    </div>
+                    <div class="mb-3">
+                        <label for="input2" class="form-label">Qualification:</label>
+                         <select class="form-control" id="input2" name="qualification">
+                             <option value="Course">Course</option>
+                             <option value="BSC">BSC</option>
+                             <option value="B.Tech">B.Tech</option>
+                             <option value="MCA">MCA</option>
+                             <option value="MBA">MBA</option>
+                         </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="input3" class="form-label">Year of Passing:</label>
+                        <select class="form-control" id="input3" name="year of passing">
+                             <option value="Year">Year</option>
+                             <option value="2019">2019</option>
+                             <option value="2020">2020</option>
+                             <option value="2021">2021</option>
+                             <option value="2022">2022</option>
+                              <option value="2023">2023</option>
+                              <option value="2024">2024</option>
+                         </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="input4" class="form-label">Gender:</label>
+                        <select class="form-control" id="input4" name="gender">
+                            <option value="Gender">Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="input5" class="form-label">Phone Number:</label>
+                        <input type="text" name="country code" id="input5" value="+91" size="2"/>
+                        <input type="text" name="phone" size="10"/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="input6" class="form-label">Email:</label>
+                        <input type="email" class="form-control" id="input6" placeholder="Enter your email" name="email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="input7" class="form-label">Password:</label>
+                        <input type="password" class="form-control" id="input7" placeholder="Enter your password" name="upass">
+                    </div>
+                    <div class="mb-3">
+                        <label for="input8" class="form-label">Confirm Password:</label>
+                        <input type="password" class="form-control" id="input8" placeholder="Confirm your password" name="ucpass">
+                    </div>
+                    <div class="mb-3">
+                        <input type="submit" value="Register" class="btn btn-danger">
+                        Already User? <a href="login">LOGIN</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+</body>
+</html>

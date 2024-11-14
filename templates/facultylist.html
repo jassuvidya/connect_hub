@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Faculty List</h2>
+<a href="{% url 'faculty-create' %}">Add Faculty</a>
+<ul>
+    {% for faculty in faculties %}
+        <li>
+            <a href="{% url 'faculty-detail' faculty.pk %}">{{ faculty }}</a>
+            <a href="{% url 'faculty-update' faculty.pk %}"><button>Edit</button></a>
+            <a href="{% url 'faculty-delete' faculty.pk %}"><button>Delete</button></a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

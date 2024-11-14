@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+        body{
+            background-image: url('https://cdn.pixabay.com/photo/2013/05/09/09/06/waves-circles-109964_1280.jpg');
+        }
+</style>
+<h2>course</h2>
+<p>Description: {{ course.description }}</p>
+<p>Credits: {{ course.credits }}</p>
+<a href="{% url 'course-update' course.pk %}"><button>Edit</button></a>
+<a href="{% url 'course-delete' course.pk %}"><button>Delete</button></a>
+<a href="{% url 'course-list' %}"><button>Back to Course List</button></a>
+{% endblock %}

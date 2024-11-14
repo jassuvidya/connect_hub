@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Faculty Detail</h2>
+<h2>{{ faculty }}</h2>
+<p>Email: {{ faculty.email }}</p>
+<p>Bio: {{ faculty.bio }}</p>
+<a href="{% url 'faculty-update' faculty.pk %}"><button>Edit</button></a>
+<a href="{% url 'faculty-delete' faculty.pk %}"><button>Delete</button></a>
+<a href="{% url 'faculty-list' %}"><button>Back to Faculty List</button></a>
+{% endblock %}
